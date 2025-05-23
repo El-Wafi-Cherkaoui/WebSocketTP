@@ -20,14 +20,13 @@ export default function WebSocketClient() {
     disableStats: false,
     });
 
-    window.Echo.channel('added-items-channel')
-      .listen('.stock',async (e) => {
-      })
+    window.Echo.channel('click_channel')
+      .listen('.click-event', (e) => {
+        console.log('Clicked at:', e.row, e.col);
+      });
 
     return () => {
-      window.Echo.leaveChannel('added-items-channel');
-      window.Echo.leaveChannel('removed-items-channel');
-      window.Echo.leaveChannel('updated-items-channel');
+      window.Echo.leaveChannel('click_channel');
     };
   }, []);
 

@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.list_box{
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+.list_box div{
+    display: flex;
+    gap: .5vw;
+}
