@@ -19,3 +19,14 @@ REVERB_PORT=your-reverb-port
 REVERB_SCHEME=your-reverb-scheme
 
 
+
+
+
+    Broadcasting Auth Route
+
+Laravel’s default broadcasting auth route is set up by the Broadcast::routes() method.
+Make sure in your routes/channels.php or routes/web.php you have:
+
+Broadcast::routes();
+
+This registers the /broadcasting/auth POST route that your client needs to authenticate private/

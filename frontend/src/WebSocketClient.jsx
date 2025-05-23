@@ -21,9 +21,9 @@ export default function WebSocketClient() {
     });
 
     window.Echo.channel('click_channel')
-      .listen('.click-event', (e) => {
-        console.log('Clicked at:', e.row, e.col);
-      });
+    .listen('.click-event', (e) => {
+    console.log('Clicked at:', e.row, e.col, 'by:', e.username);
+    });
 
     return () => {
       window.Echo.leaveChannel('click_channel');

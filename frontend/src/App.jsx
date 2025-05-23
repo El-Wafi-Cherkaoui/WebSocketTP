@@ -4,14 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WebSocketClient from './WebSocketClient'
 import Map from './Map'
+import Login from './Login'
+import OnlineUsers from './OnlineUsers'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [username, setUsername] = useState(null)
 
   return (
     <>
-      <WebSocketClient/>
-      <Map/>
+        <Login setUsername={setUsername}/>
+        <WebSocketClient />
+        <div className='board'>
+            <Map username={username}/>
+            <OnlineUsers/>
+        </div>
+
     </>
   )
 }

@@ -17,11 +17,12 @@ class ClickEvent implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public $row, $col;
-    public function __construct($row, $col)
+    public $row, $col, $username;
+    public function __construct($row, $col, $username)
     {
         $this->row = $row;
         $this->col = $col;
+        $this->username = $username;
     }
 
     /**

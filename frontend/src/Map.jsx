@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import OnlineUsers from './OnlineUsers';
 
-export default function Map() {
-    return <Boxes />;
+export default function Map({username}) {
+    return <Boxes username={username}/>;
 }
 
-function Boxes() {
+function Boxes({username}) {
     const [list, setList] = useState(() =>
         Array.from({ length: 10 }, () => Array(10).fill(null))
     );
@@ -26,7 +27,7 @@ function Boxes() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ row: rIndex, col: cIndex }),
+            body: JSON.stringify({ row: rIndex, col: cIndex, username }),
         });
     }
 
