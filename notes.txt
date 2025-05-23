@@ -1,0 +1,21 @@
+##
+php artisan install:api
+
+
+fronend :
+    npm install laravel-echo pusher-js
+
+
+composer require laravel/reverb
+
+php artisan install:broadcasting --without-node --without-reverb
+
+
+REVERB_APP_ID=your-app-id
+REVERB_APP_KEY=your-app-key
+REVERB_APP_SECRET=your-app-secret
+REVERB_HOST=your-reverb-host
+REVERB_PORT=your-reverb-port
+REVERB_SCHEME=your-reverb-scheme
+
+
